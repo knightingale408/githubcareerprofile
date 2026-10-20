@@ -1,0 +1,39 @@
+name: Weekly repo audit refresh
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Monday 13:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate auto-audit table
+        env:
+          GH_TOKEN: ${{ secrets.REPO_AUDIT_TOKEN }}
+        run: |
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::warning::REPO_AUDIT_TOKEN secret is not set. Add a classic PAT with 'repo' scope" \
+                 "as a repo secret named REPO_AUDIT_TOKEN so this job can see private repos."
+            exit 0
+          fi
+          chmod +x scripts/update_audit.sh
+          scripts/update_audit.sh knightingale408
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- README.md; then
+            git add README.md
+            git commit -m "chore: weekly auto-audit refresh"
+            git push
+          else
+            echo "No changes to commit."
+          fi
