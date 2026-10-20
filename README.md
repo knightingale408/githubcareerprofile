@@ -36,3 +36,12 @@ I build fast, solo, and across disciplines — civic-data journalism, fintech to
 ## Bottom line
 
 As of right now, this is an **early-stage, high-output solo builder** profile: real full-stack TypeScript ability (auth, data layer, tests) in one project, real Python data-wrangling in another, and a genuine publishing operation — surrounded by several parked ideas. The honest next proof points would be: shipping Meridian publicly, adding tests/CI to the Python projects, and collaborating in the open on someone else's repo.
+
+---
+
+## Attestation
+
+**Assessed by:** GitHub Copilot (AI code-review assistant), based on a direct audit of commit history, file trees, and READMEs across all 11 repos under @knightingale408.
+**Date:** October 19, 2026 (America/Los_Angeles)
+**Rating:** 4/10 — **"Promising builder."**
+**Basis:** Scope limited to repo content as of the date above; not a credential, not a guarantee of future work, and subject to change as the repos change. Re-run this audit periodically to keep the rating current.
