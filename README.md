@@ -40,7 +40,7 @@ I build fast, solo, and across disciplines — civic-data journalism, fintech to
 | Repo | Status |
 |---|---|
 | `onejob` (private) | Functional Next.js landing page wired to real Stripe Payment Links; fulfillment is manual by design. Proves basic frontend + payments integration, not backend/ops automation. |
-| `ai-aoi-index` (private) | 103 files but core scripts are ~170 bytes each — mostly stubs/structure, data panel is header-only ("not Friday-ready" per its own README). Proves planning, not a working pipeline yet. |
+| `ai-aoi-index` (private) | 103 files but core scripts are ~170 bytes each — mostly stubs/structure, data panel is header-only ("not Friday-ready" per its own README). Newly added CI caught `scripts/build_packet.py` failing to even parse (malformed docstring) — direct confirmation these are unfinished stubs, not a working pipeline yet. |
 | `public-ledger-idea` (private) | Mostly a large generated HTML bundle plus docs/process files (`CRITIQUE.md`, freeze-gate workflow). Proves process design, limited proof of custom code. |
 
 ## Ideas, not builds
